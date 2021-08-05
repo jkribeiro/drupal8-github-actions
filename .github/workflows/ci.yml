@@ -38,6 +38,14 @@ jobs:
         run: |
           robo job:build
 
+      - name: Install Robo
+        run: |
+          vendor/bin/robo --version
+          wget https://robo.li/robo.phar
+          chmod +x robo.phar
+          mv robo.phar vendor/bin/robo
+          vendor/bin/robo --version
+          
       - name: Check coding standards
         run: vendor/bin/robo job:coding-standards
 
