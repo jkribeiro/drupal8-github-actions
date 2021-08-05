@@ -10,3 +10,4 @@ Details on how to use and build this image are at [scripts/database/README.md](s
 
 There is an one-line installer at https://github.com/Lullabot/drupal8ci#github-actions that
 places all the required files to run this workflow in your Drupal 8 project.
+Test.
