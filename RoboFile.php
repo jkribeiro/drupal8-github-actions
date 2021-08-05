@@ -54,6 +54,13 @@ class RoboFile extends \Robo\Tasks {
    *   The result of the collection of tasks.
    */
   public function jobCodingStandards() {
+    $tasks = [];
+    $tasks[] = $this->taskComposerRequire()
+        ->dependency('drupal/coder');
+    $collection = $this->collectionBuilder();
+    $collection->addTaskList($tasks);
+    $collection->run();
+    
     $collection = $this->collectionBuilder();
     $collection->addTaskList($this->runCodeSniffer());
     return $collection->run();
